@@ -238,7 +238,10 @@
   <section class="scene active" id="s1">
     <button class="gift" id="giftBtn" aria-label="Abrir regalo">🎁</button>
     <h1>Hola 🤔🤔</h1>
-    <p class="sub">No sé qué decir pero... Toca el regalo.</p>
+    <p class="sub">No sé por qué pensabas que me habia olvidado..</p>
+    <p class="sub">Bueno.. espero no incomodar mucho..</p>
+    <p class="sub">Toca el regalo.</p>
+
   </section>
 
   <!-- 2. Terminal -->
@@ -247,13 +250,15 @@
       <div class="term-bar"><span></span><span></span><span></span></div>
       <div class="term-body" id="term"></div>
     </div>
-    <button class="btn" id="toCake">Ver resultado ✨</button>
+    <button class="btn" id="toCake">Continuar</button>
   </section>
 
   <!-- 3. Pastel -->
   <section class="scene" id="s3">
     <h1>FELIZ CUMPLEAÑOS!! 🌠</h1>
     <p class="sub">Estás demasiado vieja ya</p>
+    <p class="sub">Si cumplias 19? (duda real)</p>
+    <p class="sub">Bueno pide un deseo y sopla</p>
 
     <div class="cake">
       <svg viewBox="0 0 300 270" width="300" height="270" aria-hidden="true">
@@ -324,13 +329,13 @@
       </div>
     </div>
 
-    <p class="hint" id="hint">Toca cada número o usa el botón</p>
-    <button class="btn" id="blowBtn">💨 Soplar las velas</button>
+    <p class="hint" id="hint"></p>
+    <button class="btn" id="blowBtn">Soplaaaaa</button>
   </section>
 
   <!-- 4. Libro -->
   <section class="scene" id="s4">
-    <h1>Mensaje especial 📖</h1>
+    <h1>De mi pa ti</h1>
     <div class="book-wrap" id="book">
       <div class="book-top" id="pageNum">Página 1 de 1</div>
       <div class="page" id="page"></div>
@@ -350,17 +355,17 @@
   //  Edita aquí lo que quieras. Máx. ~280 caracteres por página.
   // =====================================================
   var pages = [
-    "¡Feliz cumpleaños!\n\nHoy cumples 19 años y quise hacerte algo diferente a un mensaje de WhatsApp más.\n\nAsí que me puse a programar. Sí, así de intenso soy.",
+    "Feliz cumpleaños! \n\nEspero que hayas tenido un día muy bonito.\nSolo quiero que sepas que te aprecio mucho. Eres una persona que me ha sorprendido mucho con el pasar de los años.\nSin duda alguna y aunque tal vez no lo creas, tú marcaste un pedacito de mi vida y me has hecho ver las cosas desde otra perspectiva que nunca jamás pensé verlas.",
 
-    "Primero lo primero:\nya estás vieja.\n\nYa casi eres de las que dicen \"en mis tiempos...\"\n\nPero tranquila, los 19 se llevan con dignidad. Y mucho mejor con pastel.",
+    "Admiro mucho tu forma ser y la manera en la que te enfocas cuando quieres conseguir algo.\nTe lo digo de corazón, tienes muchas cualidades que no he visto en otra persona.\n\nDisculpa sin en algún momento hice algo que no deberia, a veces disocio mucho y me voy pa otro mundo.",
 
-    "Llevamos años siendo amigos sin habernos visto nunca en persona, y aun así eres alguien muy importante para mí.\n\nEso dice mucho de ti... y un poquito de mí también.",
+    "Me parece increible que aun conservemos la amistad, litt llegamos a un punto de hablar 2 veces al año.. y era un cruce de 3 mensajes y ya.\n\nEso dice mucho de ti.. cualquier otra persona se va y ya. Créeme que valoro mucho eso.",
 
-    "Gracias por las charlas, por las risas y por aguantar mis chistes de ingeniero.\n\nSé que la mitad no los entiendes, pero igual te ríes.\n\nEso es amistad de la buena.",
+    "Y por último GRACIAS, por ser parte mi vida. Por cada conversación, por los momentos que hemos compartido y todas esas pequeñas cosas que uno no se da cuenta pero son muy significativas.",
 
-    "Mi deseo para este nuevo nivel:\n\n+ Salud\n+ Sueños cumplidos\n+ Cero lag en tu vida\n+ Muchas razones para sonreír\n\nTe lo mereces todo. 💜",
+    "Si en algún momento tal vez dejamos de hablar o nos distanciamos, quiero que siempre recuerdes que hubo alguien que se alegró de conocerte, que admiró muchas cosas de ti y que genuinamente deseó verte feliz y cumplir todo aquello que te propusieras. Por mi parte, me quedo con la alegría de haberte conocido y con la esperanza de que todavía nos queden muchas cosas bonitas por compartir, incluso si por ahora nos toca hacerlo desde la distancia.",
 
-    "Con mucho cariño,\n\nTu amigo ingeniero.\n\n> deploy de felicitación:\n  exitoso ✔\n\nFin del libro.\nGracias por leerlo."
+    "Pero eso no pasará, verdad? JEJE,\n\nBueno, ya mucho. Ya sabes que me cuesta mucho expresarme. Feliz Cumpleaños <3\n\n> deploy de felicitación:\n  exitoso ✔\n\nFin del libro.\nGracias por leerlo."
   ];
 
   // ---------- Estrellas de fondo ----------
@@ -447,9 +452,9 @@
 
   // ---------- Terminal ----------
   var lines = [
-    '> iniciando esta gran obra de arte.exe ...',
-    '> cargando el gran texto que se viene... <span class="ok">[OK]</span>',
-    '> buscando bugs en la luna... <span class="ok">0 encontrados</span>',
+    '> iniciando esta vaina.exe ...',
+    '> cargando cositas..<span class="ok">[OK]</span>',
+    '> buscando lo que no se me ha perdido <span class="ok">0 encontrados</span>',
     '> importando lo mas estupido que se me ocurra... <span class="ok">[OK]</span>',
     '> ejecutando mis pensamientos++ ...',
     '> compilación exitosa ✔'
@@ -525,7 +530,7 @@
     var hint = document.getElementById('hint');
     if (left === 0) {
       done = true;
-      hint.textContent = '¡Tu deseo está en camino! ✨';
+      hint.textContent = 'Ojala se te cumpla';
       burst(160, innerWidth / 2, innerHeight * .6);
       setTimeout(function () { burst(100, innerWidth * .2, innerHeight * .7); burst(100, innerWidth * .8, innerHeight * .7); }, 400);
       setTimeout(function () { show('s4'); startBook(); }, 2300);
@@ -638,7 +643,7 @@
     if (timer) finishTyping();
     candles.forEach(function (c) { c.classList.remove('out'); });
     done = false;
-    document.getElementById('hint').textContent = 'Toca cada número o usa el botón';
+    document.getElementById('hint').textContent = '';
     document.getElementById('toCake').style.display = 'none';
     show('s1');
   });
